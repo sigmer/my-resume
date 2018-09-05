@@ -1,0 +1,9 @@
+<p class="w3-large" (click)="toggleState()">
+  <b><i [ngClass]="['fa', icon, 'fa-fw', 'w3-margin-right', 'w3-text-blue-gray']"></i>{{title}}</b>
+  <i class="fa fa-fw w3-right" [ngClass]="{'fa-caret-down': state === 'in', 'fa-caret-left': state !== 'in'}"></i>
+</p>
+<div [@expandCollapse]='state' [ngStyle]="{'overflow': 'hidden'}">
+  <div *ngFor="let skill of skills">
+    <app-skill [skill]="skill"></app-skill>
+  </div>
+</div>

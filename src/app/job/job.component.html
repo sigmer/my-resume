@@ -1,0 +1,12 @@
+<h5 class="w3-opacity" (click)="toggleState()">
+  <b>{{job.jobTitle}} / {{job.companyName}}</b>
+  <i class="fa fa-fw w3-right" [ngClass]="{'fa-caret-down': state === 'in', 'fa-caret-left': state !== 'in'}"></i>
+</h5>
+<div [@expandCollapse]="state" [ngStyle]="{'overflow': 'hidden'}">
+  <h6 class="w3-text-blue-gray">
+    <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+    {{job.startDate | date:'MMM yyyy'}} - <span *ngIf="job.endDate">{{job.endDate | date:'MMM yyyy'}}</span>
+    <span *ngIf="!job.endDate" class="w3-tag w3-blue-gray w3-round">Current</span>
+  </h6>
+  <p>{{job.description}}</p>
+</div>

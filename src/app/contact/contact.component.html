@@ -1,0 +1,3 @@
+<p *ngIf="user.title"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue-gray"></i>{{user.title}}</p>
+<p *ngIf="user.address"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue-gray"></i>{{user.address}}</p>
+<p *ngIf="user.email"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue-gray"></i><a [href]="'mailto:' + user.email">Email me</a></p>
